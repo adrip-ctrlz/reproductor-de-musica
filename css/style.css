@@ -1,0 +1,94 @@
+h1 {
+  font-family: "Sixtyfour", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "BLED" 0,
+    "SCAN" 0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+body {
+    background-image: url('/img/fondo.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    margin-top: -20px;
+}
+
+.barra {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 50px;
+    transition: 0.5s;
+    
+}
+
+.barra:hover {
+    width: 400px;
+}
+
+.barra input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-size: 1.1em;
+    padding: 0.5em 20px;
+    background: linear-gradient(#000000, #000000ba);
+    color: #555;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0), 
+        20px 15px 15px rgb(0, 0, 0),
+        15px 10px 15px rgb(0, 0, 0),
+        10px 10px 15px rgb(0, 0, 0),
+        inset 1px 1px 2px #000000;
+        margin-top: -25px;
+       
+}
+
+.barra input::placeholder,
+.barra input
+ {
+    
+    color: transparent;
+}
+
+.barra input:hover::placeholder,
+.barra input:hover {
+
+    
+    color: #ffffff;
+}
+
+ion-icon {
+    position: absolute;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #ffffff;
+    margin-top: -20px;
+}
+    
+li {
+    color: rgba(0, 0, 0, 0);
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    place-items: center;
+    display: inline-block;
+}
+
+a{
+    color: #00000000;
+}

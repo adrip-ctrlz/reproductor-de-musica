@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Playlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #musicPlayer {
+            margin-top: 20px;
+        }
+        .track {
+            margin: 5px 0;
+        }
+        .track button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Music Playlist</h1>
+    <label for="musicUrl">Enter Music URL:</label>
+    <input type="text" id="musicUrl" placeholder="https://example.com/song.mp3">
+    <button id="addMusic">Add Music</button>
+    
+    <div id="playlist">
+        <h2>Playlist</h2>
+        <div id="musicPlayer"></div>
+    </div>
+
+    <script>
+        document.getElementById('addMusic').addEventListener('click', () => {
+            const url = document.getElementById('musicUrl').value;
+            
+            if (url) {
+                addMusicToPlayer(url);
+                document.getElementById('musicUrl').value = ''; // Clear input
+            } else {
+                alert('Please enter a valid URL.');
+            }
+        });
+
+        function addMusicToPlayer(url) {
+            const player = document.getElementById('musicPlayer');
+
+            // Create a new track container
+            const trackContainer = document.createElement('div');
+            trackContainer.className = 'track';
+
+            // Create an audio element
+            const audio = document.createElement('audio');
+            audio.src = url;
+            audio.controls = true;
+
+            // Create a remove button
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', () => {
+                trackContainer.remove();
+            });
+
+            // Append audio and button to the track container
+            trackContainer.appendChild(audio);
+            trackContainer.appendChild(removeButton);
+
+            // Append the track container to the player
+            player.appendChild(trackContainer);
+        }
+    </script>
+</body>
+</html>
